@@ -13,7 +13,6 @@ import { HiOutlineHashtag } from 'react-icons/hi'
 import { MdOutlineLogin } from 'react-icons/md'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { CgClose } from 'react-icons/cg'
-import IMG from '../assets/images/img1.jpg'
 axios.defaults.withCredentials = true;
 
 const Header = () => {
@@ -115,7 +114,7 @@ const Header = () => {
 										<li className="hover:bg-gray-200 rounded-lg">
 											<Link to={`/author/${ userInfo?._id }`} className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600">
 												<div className="h-6 w-6 rounded-full overflow-hidden">
-													<img src={IMG} className="w-full h-full object-cover group-hover:ease-in-out transition duration-500 hover:scale-[1.03]" alt="" />
+													<img src={`https://blogqita-api.up.railway.app/uploads/default-user.png`} className="w-full h-full object-cover group-hover:ease-in-out transition duration-500 hover:scale-[1.03]" alt="" />
 												</div>
 												<span className="group-hover:text-gray-700">{ userInfo?.firstName || 'Profile' }</span>
 											</Link>
