@@ -60,7 +60,7 @@ const HeroSection = ({ posts }) => {
 											src={`https://blogqita-api.up.railway.app/${post.cover}`}
 											className="w-full h-full object-cover group-hover:ease-in-out transition duration-500 hover:scale-[1.03]"
 											onError={event => {
-												event.target.src = "https://blogqita-api.up.railway.app/uploads/null.png"
+												event.target.src = "https://blogqita-api.up.railway.app/uploads/null-16:9.png"
 												event.onerror = null
 											}}
 										/>

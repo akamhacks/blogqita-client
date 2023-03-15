@@ -44,7 +44,7 @@ const LatestPost = () => {
 								className="rounded-2xl m-3"
 								alt={post.title}
 								onError={event => {
-									event.target.src = "https://blogqita-api.up.railway.app/uploads/null.png"
+									event.target.src = "https://blogqita-api.up.railway.app/uploads/null-16:9.png"
 									event.onerror = null
 								}}
 							/>

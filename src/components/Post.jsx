@@ -10,7 +10,7 @@ const Post = ({ _id, title, summary, cover, content, createdAt, author, count, c
 					<img
 						src={`https://blogqita-api.up.railway.app/${cover}`}
 						onError={event => {
-							event.target.src = "https://blogqita-api.up.railway.app/uploads/null.png"
+							event.target.src = "https://blogqita-api.up.railway.app/uploads/null-16:9.png.png"
 							event.onerror = null
 						}}
 						className="post__image w-full h-full object-cover group-hover:ease-in-out transition duration-500 hover:scale-[1.03]" alt={`${title}`} />
