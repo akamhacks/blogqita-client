@@ -17,7 +17,7 @@ const Setting = () => {
 	const [ redirect, setRedirect ] = useState(false)
 
 	const getProfile = async () => {
-		const response = await axios.get('http://localhost:4000/api/profile', {
+		const response = await axios.get('https://blogqita-api.up.railway.app/api/v1/user/profile', {
 			withCredentials: true
 		}).catch(err => console.log(err))
 		const data = await response.data
@@ -34,7 +34,7 @@ const Setting = () => {
 		if(files?.[0]) {
 			data.set('file', files?.[0])
 		}
-		const response = await axios.put(`http://localhost:4000/api/profile`, {data: data}, { withCredentials: true })
+		const response = await axios.put(`https://blogqita-api.up.railway.app/api/v1/user/profile`, {data: data}, { withCredentials: true })
 
 		if(response.ok) {
 			setRedirect(true)
@@ -59,10 +59,10 @@ const Setting = () => {
 				<div className="flex flex-row flex-wrap mx-2 basis-1/4 max-md:basis-1/3 mx-auto max-sm:flex-1 min-md:basis-1/3">
 					<div className="my-2 bg-white shadow-xl rounded-lg text-gray-900">
 						<div className="rounded-t-lg h-64 overflow-hidden">
-							<img className="object-cover object-top w-full" src="http://localhost:4000/uploads/00fe726c7a4bdbd58cf8914680221ae0.jpg" alt="Coffee" />
+							<img className="object-cover object-top w-full" src="https://blogqita-api.up.railway.app/uploads/00fe726c7a4bdbd58cf8914680221ae0.jpg" alt="Coffee" />
 						</div>
 						<div className="mx-auto w-48 h-48 relative -mt-36 border-4 border-white border-gray-400 rounded-full overflow-hidden">
-							<img src={`http://localhost:4000/${datas?.image}`} alt="Profile Image" />
+							<img src={`https://blogqita-api.up.railway.app/${datas?.image}`} alt="Profile Image" />
 						</div>
 						<div className="text-center mt-2">
 							<h3 className="font-semibold text-2xl">{ datas?.name } ({ datas?.firstName })</h3>

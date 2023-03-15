@@ -19,7 +19,7 @@ const AuthorPage = () => {
 	const id = searchParams.get('id')
 
 	const getAuthorPosts = async () => {
-		const res = await axios.get(`http://localhost:4000/api/author?id=${id}`).catch(err => console.log(err))
+		const res = await axios.get(`https://blogqita-api.up.railway.app/api/v1/user/author?id=${id}`).catch(err => console.log(err))
 		const data = await res.data
 		return data
 	}
@@ -39,10 +39,10 @@ const AuthorPage = () => {
 				<div className="flex flex-row flex-wrap mx-2 basis-1/4 max-md:basis-1/3 mx-auto max-sm:flex-1 min-md:basis-1/3">
 					<div className="my-2 bg-white shadow-xl rounded-lg text-gray-900">
 						<div className="rounded-t-lg h-64 overflow-hidden">
-							<img className="w-full object-contain" src="http://localhost:4000/uploads/coffee.jpg" alt="Coffee" />
+							<img className="w-full object-contain" src="https://blogqita-api.up.railway.app/uploads/coffee.jpg" alt="Coffee" />
 						</div>
 						<div className="mx-auto w-48 h-48 relative -mt-36 border-4 border-white rounded-full overflow-hidden">
-							<img src={`http://localhost:4000/${author.image}`} alt="Profile Image" />
+							<img src={`https://blogqita-api.up.railway.app/${author.image}`} alt="Profile Image" />
 						</div>
 						<div className="text-center mt-2">
 							<h3 className="font-semibold text-2xl">{ author.name }</h3>

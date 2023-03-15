@@ -9,7 +9,7 @@ const LatestPost = () => {
 	const [posts, setPosts] = useState()
 	const [isLoading, setIsLoading] = useState(true)
 	const getLatestPosts = async () => {
-		const res = await axios.get('http://localhost:4000/api/latest-posts').catch(err => console.log(err))
+		const res = await axios.get('https://blogqita-api.up.railway.app/api/v1/post/latest-posts').catch(err => console.log(err))
 		const data = await res.data
 		return data
 	}
@@ -40,11 +40,11 @@ const LatestPost = () => {
 							</span>
 							<a href={`/post/${post._id}`} className="">
 								<img
-								src={`http://localhost:4000/${post.cover}`}
+								src={`https://blogqita-api.up.railway.app/${post.cover}`}
 								className="rounded-2xl m-3"
 								alt={post.title}
 								onError={event => {
-									event.target.src = "http://localhost:4000/uploads/null.png"
+									event.target.src = "https://blogqita-api.up.railway.app/uploads/null.png"
 									event.onerror = null
 								}}
 							/>

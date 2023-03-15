@@ -7,7 +7,7 @@ const Categories = () => {
 	const [isLoading, setIsLoading] = useState(true)
 	const [categories, setCategories] = useState()
 	const getCategories = async () => {
-		const res = await axios.get('http://localhost:4000/api/categories').catch(err => console.log(err))
+		const res = await axios.get('https://blogqita-api.up.railway.app/api/v1/post/categories').catch(err => console.log(err))
 		const data = await res.data
 		return data
 	}

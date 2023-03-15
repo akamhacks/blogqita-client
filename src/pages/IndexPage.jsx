@@ -20,7 +20,7 @@ const IndexPage = () => {
 	const [dataUser, setDataUser] = useState()
 	const pages = searchParams.get('page')
 	const getPosts = async () => {
-		const res = await axios.get(`http://localhost:4000/api/posts?page=${pages}`, {
+		const res = await axios.get(`https://blogqita-api.up.railway.app/api/v1/post/posts?page=${pages}`, {
 			withCredentials: true
 		}).catch(err => console.log(err))
 		const data = await res.data
@@ -28,13 +28,13 @@ const IndexPage = () => {
 	}
 
 	const checkSetting = async () => {
-		const res = await axios.get(`http://localhost:4000/api/profile`).catch(err => console.log(err))
+		const res = await axios.get(`https://blogqita-api.up.railway.app/api/v1/user/profile`).catch(err => console.log(err))
 		const data = await res.data
 		return data
 	}
 
 	const getSearchPosts = async () => {
-		const res = await axios.get(`http://localhost:4000/api/search?title=${searchValue}`, {
+		const res = await axios.get(`https://blogqita-api.up.railway.app/api/v1/post/search?title=${searchValue}`, {
 				withCredentials: true
 		}).catch(err => console.log(err))
 		const data = await res.data
@@ -42,7 +42,7 @@ const IndexPage = () => {
 	}
 
 	const getFeaturedPosts = async () => {
-		const res = await axios.get(`http://localhost:4000/api/featured`, {
+		const res = await axios.get(`https://blogqita-api.up.railway.app/api/v1/post/featured`, {
 				withCredentials: true
 		}).catch(err => console.log(err))
 		const data = await res.data

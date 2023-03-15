@@ -8,9 +8,9 @@ const Post = ({ _id, title, summary, cover, content, createdAt, author, count, c
 			<div className="basis-1/3 max-sm:mb-6 relative right-0 ">
 				<Link to={`/post?id=${_id}`} className="block aspect-square max-md:aspect-auto overflow-hidden w-56 h-56 rounded-2xl mx-lg:w-48 max-lg:h-48 max-md:h-full max-md:w-full">
 					<img
-						src={`http://localhost:4000/${cover}`}
+						src={`https://blogqita-api.up.railway.app/${cover}`}
 						onError={event => {
-							event.target.src = "http://localhost:4000/uploads/null.png"
+							event.target.src = "https://blogqita-api.up.railway.app/uploads/null.png"
 							event.onerror = null
 						}}
 						className="post__image w-full h-full object-cover group-hover:ease-in-out transition duration-500 hover:scale-[1.03]" alt={`${title}`} />

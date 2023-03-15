@@ -9,7 +9,7 @@ const ResetReq = () => {
 	const navigate = useNavigate()
 
 	const reqResetPasswordHandler = async (email) => {
-		const response = await axios.get(`http://localhost:4000/api/reset?email=${email}`, email, { withCredentials: true })
+		const response = await axios.get(`https://blogqita-api.up.railway.app/api/v1/auth/reset?email=${email}`, email, { withCredentials: true })
 			.then(response => {
 				alert(response?.data?.message)
 				setEmail('')

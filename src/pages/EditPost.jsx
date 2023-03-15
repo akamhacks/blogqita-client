@@ -20,7 +20,7 @@ const EditPost = () => {
 	const tags = tag.split(',')
 
 	const getPost = async() => {
-		const response = await axios.get(`http://localhost:4000/api/post?id=${id}`)
+		const response = await axios.get(`https://blogqita-api.up.railway.app/api/v1/post/post?id=${id}`)
 			.catch(err => console.log(err))
 		const data = await response.data
 		return
@@ -50,7 +50,7 @@ const EditPost = () => {
 			console.log(files?.[0])
 			data.set('file', files?.[0])
 		}
-		const response = await axios.put(`http://localhost:4000/api/post?id=${id}`, {data: data}, {
+		const response = await axios.put(`https://blogqita-api.up.railway.app/api/v1/post/post?id=${id}`, {data: data}, {
 			withCredentials: true
 		}).catch(err => console.log(err))
 

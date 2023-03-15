@@ -12,7 +12,7 @@ const TagsPage = () => {
 	const id = searchParams.get('id')
 
 	const getTagsPosts = async () => {
-		const res = await axios.get(`http://localhost:4000/api/tags?id=${id}`).catch(err => console.log(err))
+		const res = await axios.get(`https://blogqita-api.up.railway.app/api/v1/post/tags?id=${id}`).catch(err => console.log(err))
 		const data = await res.data
 		return data
 	}

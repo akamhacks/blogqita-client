@@ -5,7 +5,7 @@ const Account = () => {
   const { userInfo, setUserInfo, isLogin, setIslogin } = useContext(UserContext)
   const [email, setEmail] = useState('')
   const logout = () => {
-    fetch('http://localhost:4000/api/logout', {
+    fetch('https://blogqita-api.up.railway.app/v1/api/auth/logout', {
       credentials: 'include',
       method: 'POST'
     })
@@ -15,7 +15,7 @@ const Account = () => {
   }
   useEffect(() => {
     if(isLogin) {
-      fetch('http://localhost:4000/api/profile', {
+      fetch('https://blogqita-api.up.railway.app/v1/api/user/profile', {
         credentials: 'include'
       })
         .then(response => {
@@ -43,7 +43,7 @@ const Account = () => {
     <div className="group/item inline-block relative">
       <button>
         <span className="mr-1 flex">
-          <img className="w-8 h-8 rounded-full ml-3 mr-3 border-4 border-gray-300" src={`http://localhost:4000/${userInfo?.image}`} alt="user photo" />
+          <img className="w-8 h-8 rounded-full ml-3 mr-3 border-4 border-gray-300" src={`https://blogqita-api.up.railway.app/${userInfo?.image}`} alt="user photo" />
           <span className="my-auto">
             <b className="max-lg:hidden">{ userInfo?.firstName }</b>
           </span>

@@ -29,45 +29,45 @@ const PostPage = () => {
 	const id = searchParams.get('id')
 
 	const getSinglePost = async () => {
-		const res = await axios.get(`http://localhost:4000/api/post?id=${id}`).catch(err => console.log(err))
+		const res = await axios.get(`https://blogqita-api.up.railway.app/api/v1/post/post?id=${id}`).catch(err => console.log(err))
 		const data = await res.data
 		return data
 	}
 
 	const getComments = async () => {
-		const res = await axios.get(`http://localhost:4000/api/comments?postId=${id}`).catch(err => console.log(err))
+		const res = await axios.get(`https://blogqita-api.up.railway.app/api/v1/respond/comments?postId=${id}`).catch(err => console.log(err))
 		const data = await res.data
 		return data
 	}
 
 	const removeComment = (id) => {
-		const res = axios.delete(`http://localhost:4000/api/comment?id=${id}`).catch(err => console.log(err))
+		const res = axios.delete(`https://blogqita-api.up.railway.app/api/v1/respond/comment?id=${id}`).catch(err => console.log(err))
 		setComments(current => current.filter(comment => comment._id !== id))
 	}
 
 	const postComment = async (e) => {
 		e.preventDefault()
-		const res = await axios.post(`http://localhost:4000/api/comment?id=${id}`, { commentText: commentText}, {
+		const res = await axios.post(`https://blogqita-api.up.railway.app/api/v1/respond/comment?id=${id}`, { commentText: commentText}, {
 			withCredentials: true
 		}).catch(err => console.log(err))
 		setCommentText('')
 	}
 
 	const likeHandler = async (id) => {
-		const res = await axios.post(`http://localhost:4000/api/like?id=${id}`, {}, {
+		const res = await axios.post(`https://blogqita-api.up.railway.app/api/v1/respond/like?id=${id}`, {}, {
 			withCredentials: true
 		}).catch(err => console.log(err))
 		setCommentText(`${commentText} `)
 	}
 
 	const dislikeHandler = async (id) => {
-		const res = await axios.post(`http://localhost:4000/api/dislike?id=${id}`, {}, {
+		const res = await axios.post(`https://blogqita-api.up.railway.app/api/v1/respond/dislike?id=${id}`, {}, {
 			withCredentials: true
 		}).catch(err => console.log(err))
 	}
 
 	const replyHandler = async (id) => {
-		const res = await axios.put(`http://localhost:4000/api/reply?id=${id}`, {commentText: commentText}, {
+		const res = await axios.put(`https://blogqita-api.up.railway.app/api/v1/respond/reply?id=${id}`, {commentText: commentText}, {
 			withCredentials: true
 		}).catch(err => console.log(err))
 		setCommentText('')
@@ -76,7 +76,7 @@ const PostPage = () => {
 	}
 
 	const updateHandler = async (id) => {
-		const res = await axios.put(`http://localhost:4000/api/comment?id=${id}`, {commentText: commentText}, {
+		const res = await axios.put(`https://blogqita-api.up.railway.app/api/v1/respond/comment?id=${id}`, {commentText: commentText}, {
 			withCredentials: true
 		}).catch(err => console.log(err))
 		setCommentText('')
@@ -119,7 +119,7 @@ const PostPage = () => {
 	return (
 		<div className="flex flex-col gap-12 ">
 			<div className="bg-white rounded-3xl shadow-2xl p-4">
-				<img src={`http://localhost:4000/${postInfo?.cover}`} className="rounded-xl h-96 w-full object-cover" />
+				<img src={`https://blogqita-api.up.railway.app/${postInfo?.cover}`} className="rounded-xl h-96 w-full object-cover" />
 			</div>
 			<div className="flex flex-row gap-10 max-lg:flex-col">
 				<div className="basis-3/4 bg-white rounded-3xl p-4 shadow-xl mb-10 h-fit flex flex-col">
@@ -156,7 +156,7 @@ const PostPage = () => {
 			</div>
 			<div className="bg-white rounded-3xl shadow-2xl p-6 w-[-425rem] mx-auto">
 				<Link to={`/author?id=${postInfo?.post?.author?._id}`} className="rounded-full mx-auto h-32 w-32 overflow-hidden">
-					<img src={`http://localhost:4000/${postInfo?.post?.author?.image}`} className="rounded-full mx-auto h-32 w-32" alt=""/>
+					<img src={`https://blogqita-api.up.railway.app/${postInfo?.post?.author?.image}`} className="rounded-full mx-auto h-32 w-32" alt=""/>
 				</Link>
 				<h3 className="text-center font-bold text-xl"><Link to={`/author?id=${postInfo?.post?.author?._id}`}>{ postInfo?.post?.author?.name }</Link></h3>
 				<p className="text-center text-gray-600">{postInfo?.post?.author?.bio}</p>

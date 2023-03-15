@@ -7,7 +7,7 @@ const Tags = () => {
 	const [isLoading, setIsLoading] = useState(true)
 	const [tags, setTags] = useState()
 	const getTags = async () => {
-		const res = await axios.get('http://localhost:4000/api/tags').catch(err => console.log(err))
+		const res = await axios.get('https://blogqita-api.up.railway.app/api/v1/post/tags').catch(err => console.log(err))
 		const data = await res.data
 		return data
 	}

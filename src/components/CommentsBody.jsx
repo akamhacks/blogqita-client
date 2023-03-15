@@ -37,7 +37,7 @@ const CommentsBody = ({ comments, isLoading, removeComment, likeHandler, dislike
 					<>
 						<div className={`${marginLeft[comment.depth - 2]} flex flex-row gap-2 border-l border-l-4 border-b rounded-bl-3xl rounded-tl-lg pl-2 pb-6 mb-2 group/tripledot`}>
 							<div className="rounded-full w-8 h-8 overflow-hidden -mt-6 max-sm:w-6 max-sm:h-6 max-sm:-ml-5 max-sm:-mt-5 max-sm:absolute">
-								<img src={`http://localhost:4000/${comment?.commenter?.image}`} alt={comment?.commenter?.name} className="object-cover rounded-full aspect-square group-hover:ease-in-out transition duration-100 hover:scale-[1.09]" />
+								<img src={`https://blogqita-api.up.railway.app/${comment?.commenter?.image}`} alt={comment?.commenter?.name} className="object-cover rounded-full aspect-square group-hover:ease-in-out transition duration-100 hover:scale-[1.09]" />
 							</div>
 							<div className="bg-white rounded-xl ml-2 shadow-md -mt-4 min-w-min w-80 min-h-min pr-10 pl-2 hover:bg-slate-100">
 								{comment.parentId && <p className="text-gray-500 hover:text-black"><i>reply : </i>@{comment.replyTo}</p>}

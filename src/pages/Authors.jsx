@@ -13,13 +13,13 @@ const Authors = () => {
 	const id = searchParams.get('id')
 	
 	const getAuthors = async () => {
-		const res = await axios.get('http://localhost:4000/api/authors').catch(err => console.log(err))
+		const res = await axios.get('https://blogqita-api.up.railway.app/api/v1/user/authors').catch(err => console.log(err))
 		const data = await res.data
 		return data
 	}
 
 	const clickFollowButton = async (id) => {
-		const response = await axios.put(`http://localhost:4000/api/author?id=${id}`, {
+		const response = await axios.put(`https://blogqita-api.up.railway.app/api/v1/user/author?id=${id}`, {
 			withCredentials: true
 		}).catch(err => console.log(err))
 		const data = await response.data
@@ -47,10 +47,10 @@ const Authors = () => {
 					<div className="flex flex-row flex-wrap mx-4 basis-1/4 max-md:basis-1/3 mx-auto max-sm:flex-1 min-md:basis-1/3 max-md:max-w-xs">
 						<div className="my-2 bg-white shadow-xl rounded-lg text-gray-900">
 							<div className="rounded-t-lg h-32 overflow-hidden">
-								<img className="w-full" src="http://localhost:4000/uploads/coffee.jpg" alt="Coffee" />
+								<img className="w-full" src="https://blogqita-api.up.railway.app/uploads/coffee.jpg" alt="Coffee" />
 							</div>
 							<div className="mx-auto w-32 h-32 relative -mt-16 border-4 border-white rounded-full overflow-hidden">
-								<img src={`http://localhost:4000/${author.image}`} alt="Profile Image" />
+								<img src={`https://blogqita-api.up.railway.app/${author.image}`} alt="Profile Image" />
 							</div>
 							<div className="text-center mt-2">
 								<Link to={`/author?id=${author._id}`}>

@@ -9,7 +9,7 @@ const VerifyEmail = () => {
 
 	useEffect(() => {
 		const verifyAccount = async () => {
-			const response = await axios.get(`http://localhost:4000/api/verify?token=${token}`)
+			const response = await axios.get(`https://blogqita-api.up.railway.app/api/v1/auth/verify?token=${token}`)
 				.then(response => console.log(response))
 				.catch(err => console.log(err))
 		}

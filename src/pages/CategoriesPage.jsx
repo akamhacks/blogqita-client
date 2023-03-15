@@ -12,7 +12,7 @@ const CategoriesPage = () => {
 	const id = searchParams.get('id')
 
 	const getCategoriesPosts = async () => {
-		const res = await axios.get(`http://localhost:4000/api/categories?id=${id}`).catch(err => console.log(err))
+		const res = await axios.get(`https://blogqita-api.up.railway.app/api/v1/post/categories?id=${id}`).catch(err => console.log(err))
 		const data = await res.data
 		return data
 	}

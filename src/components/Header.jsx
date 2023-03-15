@@ -21,7 +21,7 @@ const Header = () => {
 	const { isLogin, setIslogin, userInfo, setUserInfo, searchValue, setSearchValue } = useContext(UserContext)
 
 	const logout = async () => {
-		const response = await axios.post(`http://localhost:4000/api/logout`, {}, {withCredentials: true})
+		const response = await axios.post(`https://blogqita-api.up.railway.app/api/v1/auth/logout`, {}, {withCredentials: true})
 			.then(response => {
 				setUserInfo(null)
 				setIslogin(false)
@@ -30,7 +30,7 @@ const Header = () => {
 	}
 
 	const getUserInfo = async () => {
-		const response = await axios.get(`http://localhost:4000/api/profile`, { withCredentials: true }).catch(err => console.log(err))
+		const response = await axios.get(`https://blogqita-api.up.railway.app/api/v1/user/profile`, { withCredentials: true }).catch(err => console.log(err))
 		const data = await response.data
 		return
 	}

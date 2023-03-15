@@ -57,10 +57,10 @@ const HeroSection = ({ posts }) => {
 								<div className="bg-white aspect-video rounded-2xl p-4">
 									<Link to={`/post?id=${post._id}`} className="block overflow-hidden rounded-lg">
 										<img
-											src={`http://localhost:4000/${post.cover}`}
+											src={`https://blogqita-api.up.railway.app/${post.cover}`}
 											className="w-full h-full object-cover group-hover:ease-in-out transition duration-500 hover:scale-[1.03]"
 											onError={event => {
-												event.target.src = "http://localhost:4000/uploads/null.png"
+												event.target.src = "https://blogqita-api.up.railway.app/uploads/null.png"
 												event.onerror = null
 											}}
 										/>

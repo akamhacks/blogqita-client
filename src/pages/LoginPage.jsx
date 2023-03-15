@@ -19,7 +19,7 @@ const LoginPage = () => {
     e.preventDefault();
     const response = await axios
       .post(
-        "http://localhost:4000/api/login",
+        "https://blogqita-api.up.railway.app/api/v1/auth/login",
         { email, password },
         {
           withCredentials: true,
@@ -40,7 +40,7 @@ const LoginPage = () => {
 
 	const register = async (e) => {
 		e.preventDefault()
-		const response = await axios.post('http://localhost:4000/api/register', { firstName: firstNameRegister, name: nameRegister, email: emailRegister, password: passwordRegister }, { withCredentials: true, })
+		const response = await axios.post('https://blogqita-api.up.railway.app/api/v1/auth/register', { firstName: firstNameRegister, name: nameRegister, email: emailRegister, password: passwordRegister }, { withCredentials: true, })
 			.then(response => {
 				alert(response?.data?.message)
 				setNameRegister('')

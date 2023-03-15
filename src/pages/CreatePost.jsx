@@ -30,7 +30,7 @@ const CreatePost = () => {
 		data.set('tags', tags)
 		data.set('file', files[0])
 
-		const response = await axios.post('http://localhost:4000/api/post', data, {
+		const response = await axios.post('https://blogqita-api.up.railway.app/api/v1/post/post', data, {
 			withCredentials: true,
 		}).then(res => {
 				setRedirect(true)
