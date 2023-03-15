@@ -43,48 +43,7 @@ const CreatePost = () => {
 	}
 
 	return (
-		<form onSubmit={createNewPost} encType="multipart/form-data">
-			<input
-				type="title"
-				placeholder={'Title'}
-				value={title}
-				onChange={e => setTitle(e.target.value)}
-				className="block mb-[5px] w-full p-[5px] border-b-gray-400 border-solid border-2 rounded"
-			/>
-			<input
-				type="summary"
-				placeholder={'Summary'}
-				value={summary}
-				maxLength="200"
-				onChange={e => setSummary(e.target.value)}
-				className="block mb-[5px] w-full p-[5px] border-b-gray-400 border-solid border-2 rounded"
-			/>
-			<input
-				type="file"
-				name="file"
-				onChange={e => setFiles(e.target.files)}
-				className="w-full bg-gray-300 rounded shadow-lg"
-			/>
-			<Editor
-				value={content}
-				onChange={setContent}
-			/>
-			<input
-				type="category"
-				placeholder={'Category (pisahkan dengan koma space (", "))'}
-				value={category}
-				onChange={e => setCategory(e.target.value)}
-				className="block mb-[5px] w-full p-[5px] border-b-gray-400 border-solid border-2 rounded"
-			/>
-			<input
-				type="tag"
-				placeholder={'Tag (pisahkan dengan koma space (", "))'}
-				value={tag}
-				onChange={e => setTag(e.target.value)}
-				className="block mb-[5px] w-full p-[5px] border-b-gray-400 border-solid border-2 rounded"
-			/>
-			<button className="mt-2 w-full bg-gray-600 text-white rounded shadow-lg">Post</button>
-		</form>
+		<h1>Bismillah</h1>
 	)
 }
 
