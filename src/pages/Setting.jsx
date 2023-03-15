@@ -23,6 +23,7 @@ const Setting = () => {
 		const data = await response.data
 		return data
 	}
+	
 
 	const settingAccount = async (e) => {
 		e.preventDefault()
