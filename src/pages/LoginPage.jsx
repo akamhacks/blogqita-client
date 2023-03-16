@@ -53,9 +53,9 @@ const LoginPage = () => {
 			})
 	}
 
-  // if (isLogin === true) {
-  //   navigate("/");
-  // }
+  if (isLogin === true) {
+    navigate("/");
+  }
 
   return (
     <div>

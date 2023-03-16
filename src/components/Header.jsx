@@ -35,7 +35,7 @@ const Header = () => {
 	}
 
 	useEffect(() => {
-		if(isLogin) {
+		if(isLogin || isLogin === 'true') {
 			getUserInfo().then(response => {
 				if(!response?.user?._id) {
 					setIslogin(false)
