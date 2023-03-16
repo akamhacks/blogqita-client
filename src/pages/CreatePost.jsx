@@ -38,7 +38,7 @@ const CreatePost = () => {
 	}
 
 	if(redirect || !userInfo?.isWriter) {
-		return <Navigate to={`/post?id=${id}`} />
+		return <Navigate to={`/`} />
 	}
 
 	return (
