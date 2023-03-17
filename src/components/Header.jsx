@@ -20,7 +20,7 @@ const Header = () => {
 	const { isLogin, setIslogin, userInfo, setUserInfo, searchValue, setSearchValue } = useContext(UserContext)
 
 	const logout = async () => {
-		const response = await axios.post(`https://blogqita-api.up.railway.app/api/v1/auth/logout`, {}, {withCredentials: true})
+		const response = await axios.post(`http://localhost:5000/api/v1/auth/logout`, {}, {withCredentials: true})
 			.then(response => {
 				setUserInfo(null)
 				setIslogin(false)
@@ -29,7 +29,7 @@ const Header = () => {
 	}
 
 	const getUserInfo = async () => {
-		const response = await axios.get(`https://blogqita-api.up.railway.app/api/v1/user/profile`, { withCredentials: true }).catch(err => console.log(err))
+		const response = await axios.get(`http://localhost:5000/api/v1/user/profile`, { withCredentials: true }).catch(err => console.log(err))
 		const data = await response.data
 		return
 	}
@@ -114,7 +114,7 @@ const Header = () => {
 										<li className="hover:bg-gray-200 rounded-lg">
 											<Link to={`/author/${ userInfo?._id }`} className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600">
 												<div className="h-6 w-6 rounded-full overflow-hidden">
-													<img src={`https://blogqita-api.up.railway.app/uploads/default-user.png`} className="w-full h-full object-cover group-hover:ease-in-out transition duration-500 hover:scale-[1.03]" alt="" />
+													<img src={`http://localhost:5000/uploads/default-user.png`} className="w-full h-full object-cover group-hover:ease-in-out transition duration-500 hover:scale-[1.03]" alt="" />
 												</div>
 												<span className="group-hover:text-gray-700">{ userInfo?.firstName || 'Profile' }</span>
 											</Link>
