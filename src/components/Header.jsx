@@ -23,7 +23,7 @@ const Header = () => {
 		const response = await axios.post(`https://blogqita-api.up.railway.app/api/v1/auth/logout`, {}, {withCredentials: true})
 			.then(response => {
 				setUserInfo(null)
-				setIslogin(false)
+ 				setIslogin(false)
 				localStorage.setItem('IS_LOGIN_INFO', false)
 			})
 	}
