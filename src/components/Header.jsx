@@ -31,13 +31,13 @@ const Header = () => {
 	const getUserInfo = async () => {
 		const response = await axios.get(`https://blogqita-api.up.railway.app/api/v1/user/profile`, { withCredentials: true }).catch(err => console.log(err))
 		const data = await response.data
-		return
+		return data
 	}
 
 	useEffect(() => {
 		if(isLogin || isLogin === 'true') {
 			getUserInfo().then(response => {
-				if(!response?.user?._id) {
+				if(userInfo?.name == null) {
 					setIslogin(false)
 					localStorage.setItem('IS_LOGIN_INFO', false)
 					setUserInfo(null)
