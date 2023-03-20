@@ -2,7 +2,6 @@ import React from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Account from './Account'
 
 export default function MobileDropdown() {
   const searchIconClick = () => {
