@@ -90,6 +90,7 @@ const IndexPage = () => {
 							<Post {...post} key={post._id} />
 						))}
 					</div>
+					<img className="w-full" src="https://assets.entrepreneur.com/content/3x2/2000/20180703190744-rollsafe-meme.jpeg" alt="Coffee" />
 					<div className="basis-1/4 bg-white rounded-xl p-4 text-center shadow-xl mb-10 h-fit flex flex-col gap-6">
 						<LatestPost />
 						<Tags />
